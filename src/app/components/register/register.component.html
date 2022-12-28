@@ -1,6 +1,6 @@
 <div class="main">
     <div class="row-main">
-        <form>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
             <div class="column-main">
                 <div class="head">
                     <h1>
@@ -16,19 +16,19 @@
                 <div class="name">
                     <mat-form-field class="first-name" appearance="outline">
                         <mat-label>First Name</mat-label>
-                        <input matInput placeholder="">
+                        <input matInput formControlName="firstName" placeholder="">
                         <mat-error>add valid first name</mat-error>
                     </mat-form-field>
                     <mat-form-field class="last-name" appearance="outline">
                         <mat-label>Last Name</mat-label>
-                        <input matInput placeholder="">
+                        <input matInput formControlName="lastName" placeholder="">
                         <mat-error>add valid last name</mat-error>
                     </mat-form-field>
                 </div>
                 <div class="email-class">
                     <mat-form-field appearance="outline">
                         <mat-label>Username</mat-label>
-                        <input matInput placeholder="">
+                        <input matInput formControlName="email" placeholder="">
                         <mat-error>add valid email</mat-error>
                         <mat-hint class="hint1">You can use letters,numbers & periods</mat-hint>
                     </mat-form-field>
@@ -37,24 +37,22 @@
                 <div class="name">
                     <mat-form-field class="first-name" appearance="outline">
                         <mat-label>Password</mat-label>
-                        <input type="password" matInput placeholder="">
+                        <input type="password" matInput formControlName="password" placeholder="">
                         <mat-error>add valid passward</mat-error>
                     </mat-form-field>
                     <mat-form-field class="last-name" appearance="outline">
                         <mat-label>Confirm</mat-label>
-                        <input type="password" matInput placeholder="">
+                        <input type="password" matInput formControlName="confirmPassword" placeholder="">
                         <mat-error>add valid confirm passward</mat-error>
                     </mat-form-field>
                 </div>
-                <div class="hint3">
-                    <mat-hint class="hint2">Use 8 or more characters with a mix of letters numbers & symbols
-                    </mat-hint>
-                </div>
+                <mat-hint class="hint2">Use 8 or more characters with a mix of letters numbers & symbols
+                </mat-hint>
                 <div class="checkbox-show-password">
                     <mat-checkbox>Show Password</mat-checkbox>
                 </div>
                 <div class="below-button">
-                    <button class="sign-btn" mat-stroked-button>Sign in instead</button>
+                    <button class="sign-btn" mat-stroked-button routerLink="/">Sign in instead</button>
                     <button class="next-btn" mat-raised-button>Next</button>
                 </div>
             </div>

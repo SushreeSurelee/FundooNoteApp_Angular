@@ -1,0 +1,82 @@
+.main {
+    height: 75vh;
+    width: 33vw;
+    border: 2px solid #d5d1d1;
+    border-radius: 10px;
+    margin-left: 510px;
+    margin-top: 87px;
+}
+
+.column-main {
+    height: 73vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0px solid blue;
+    margin-top: 35px;
+}
+
+.head h1 {
+    font-family: "Google Sans", "Noto Sans Myanmar UI", arial, sans-serif;
+    border: 0px solid red;
+    margin-left: 45px;
+    margin-top: 10px;
+    font-size: 27px;
+}
+
+.head h3 {
+    font-family: "Google Sans", "Noto Sans Myanmar UI", arial, sans-serif;
+    border: 0px solid red;
+    font-size: 17px;
+}
+
+.email-class {
+    margin-top: 20px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    border: 0px solid blue;
+}
+
+.forgot {
+
+    font-family: "Google Sans", "Noto Sans Myanmar UI", arial, sans-serif;
+    color: #4285f4;
+    border: 0px solid blue;
+    font-size: 15px;
+    margin-top: -15px;
+    font-weight: bold
+}
+
+.guest {
+    font-family: "Google Sans", "Noto Sans Myanmar UI", arial, sans-serif;
+    width: 94%;
+    margin-top: 20px;
+    margin-bottom: 35px;
+    font-weight: lighter;
+}
+
+.guest span {
+    color: #4285f4;
+}
+
+.sign-btn {
+    font-weight: bold;
+    border: none;
+    color: #1a73e8;
+    width: 10vw;
+    height: 6vh;
+    font-size: 15px;
+}
+
+.next-btn {
+    background-color: #1a73e8;
+    width: 7vw;
+    height: 6vh;
+    border-radius: 3px;
+    font-size: 15px;
+    text-align: center;
+    color: white;
+    border: none;
+    float: right;
+}

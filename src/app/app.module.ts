@@ -14,6 +14,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +31,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     MatCheckboxModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -13,16 +13,16 @@ export class HttpService {
   postService(url: string, requestData: any, token: boolean = false, httpOptions: any) {
     return this.httpClient.post(this.baseurl + url, requestData, token && httpOptions);
   }
+  
+  getService(url: string,token: boolean = false, httpOptions: any) {
+    return this.httpClient.get(this.baseurl+url,token && httpOptions)
+  }
 
   putService() {
 
   }
 
   deleteService() {
-
-  }
-
-  getService() {
 
   }
 

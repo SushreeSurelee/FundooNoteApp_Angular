@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/userService/user.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit{
   loginForm!: FormGroup;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder, private userService:UserService) { }
+  constructor(private formBuilder: FormBuilder, private userService:UserService, private router:Router) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -34,15 +35,9 @@ export class LoginComponent implements OnInit{
         }
         this.userService.login(payload).subscribe((response : any)=> {
           console.log("login sucessfull",response);
+          localStorage.setItem('token',response.id);
+          this.router.navigateByUrl('/dashboard/notes')
         })
     }
-
-    // display form values on success
-    // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.loginForm.value));
-}
-
-onReset() {
-  this.submitted = false;
-  this.loginForm.reset();
 }
 }

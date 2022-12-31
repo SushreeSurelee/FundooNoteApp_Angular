@@ -1,0 +1,81 @@
+.note-container{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid white;
+    box-shadow: 1px 1px 3px 3px rgba(157, 167, 170, 0.215);
+    border-radius: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: white;
+    width: 43vw;
+    margin: 35px;
+    margin-left: 470px;
+}
+.title-pinIcon{
+    display: flex;
+    flex-direction: row;
+}
+.title {
+    min-height: 10px;
+    padding-bottom: 30px;
+    padding-left: 15px;
+    font-size: large;
+    width: 90%;
+    border: none;
+    outline: none;
+    border: 0px solid blue;
+}
+.pin{
+    opacity:0.7;
+}
+.take-note{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+  .note-field{
+    min-height: 27px;
+    padding-bottom: 0px;
+    padding-left: 15px;
+    height: 2px;
+    width: 95%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border: 0px solid blue;
+  }
+
+  .icons {
+    display: flex;
+    flex-direction: row;
+    padding-left: 579px;
+    opacity: 0.7;
+    margin-bottom: -27px;
+    margin-left: -70px;
+}
+
+.icons button {
+    border: none;
+    background-color: white;
+    width:52px;
+    height:25px;
+    padding-bottom: 30px;
+}
+
+
+.icons-close{
+    display: flex;
+    flex-direction: row;
+    font-size: large;
+    background-color: white;
+    border:0px white;
+    padding-top:15px;
+}
+
+.closeButton{
+    background-color: transparent;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color:  rgba(0,0,0,.87);
+}

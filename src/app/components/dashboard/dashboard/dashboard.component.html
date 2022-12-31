@@ -1,6 +1,5 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
     <mat-toolbar class="example-toolbar">
-
         <div mat-icon-button (click)="snav.toggle()" class="menubutton" role="button">
             <mat-icon>menu</mat-icon>
         </div>
@@ -8,8 +7,6 @@
             <img src="../../../../assets/keep_logo.png">
         </div>
         <h1 class="example-app-name">Fundoo</h1>
-
-
         <div class="search-container">
             <div class="search-btn" type="button">
                 <img src="../../../../assets/search.svg">
@@ -19,7 +16,6 @@
                     role="combobox" aria-hidden="false">
             </div>
         </div>
-
         <div class="btn-container">
             <div>
                 <img class="img" src="../../../assets/Refresh.png">
@@ -33,9 +29,7 @@
                 <img class="img1" src="../../../../assets/person.svg">
             </div>
         </div>
-
     </mat-toolbar>
-
 
     <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
         <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
@@ -44,27 +38,30 @@
             <mat-nav-list>
                 <div class="note">
                     <img src="../../../assets/lightbulb.svg" alt="">
-                    <a mat-list-item >Notes</a>
+                    <a mat-list-item>Notes</a>
                 </div>
                 <div class="reminders">
                     <img src="../../../../assets/reminderIcon.svg" alt="">
-                    <a mat-list-item >Reminders</a>
+                    <a mat-list-item>Reminders</a>
                 </div>
                 <div class="label">
                     <img src="../../../../assets/editIcon.svg" alt="">
-                    <a mat-list-item >Edit labels</a>
+                    <a mat-list-item>Edit labels</a>
                 </div>
                 <div class="archive">
                     <img src="../../../assets/archive.svg" alt="">
-                    <a mat-list-item >Archive</a>
+                    <a mat-list-item>Archive</a>
                 </div>
                 <div class="trash">
                     <img src="../../../assets/delete.svg" alt="">
-                    <a mat-list-item  >Trash</a>
+                    <a mat-list-item>Trash</a>
                 </div>
             </mat-nav-list>
-
         </mat-sidenav>
+
+        <mat-sidenav-content>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
 
     </mat-sidenav-container>
 </div>

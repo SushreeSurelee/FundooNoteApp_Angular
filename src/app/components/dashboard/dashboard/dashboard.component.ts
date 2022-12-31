@@ -3,13 +3,13 @@ import {MediaMatcher} from '@angular/cdk/layout';
 import { Router } from '@angular/router';
 import { OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
   mobileQuery: MediaQueryList;
 
   fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
@@ -35,5 +35,4 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
-  
 }

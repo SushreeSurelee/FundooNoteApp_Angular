@@ -1,0 +1,25 @@
+<div class="note-container">
+    <div class="title-pinIcon" *ngIf="isShow">
+        <input class="title" placeholder="Title" [(ngModel)]="title">
+        <img class="pin" src="../../../assets/pinNoteIcon.svg">
+    </div>
+    <div class="take-note" (click)="ShowTakeNoteOne()">
+        <div *ngIf="!isShow || isShow">
+            <input class="note-field" type="text" placeholder="Take a note..." [(ngModel)]="description">
+        </div>
+        <div class="icons" *ngIf="!isShow">
+            <button mat-icon-button matTooltip="New list">
+                <img src="../../../assets/newListIcon.svg">
+            </button>
+            <button mat-icon-button matTooltip=" New note with drawing"> <img
+                    src="../../../assets/drawIcon.svg"></button>
+            <button mat-icon-button matTooltip=" New note with image"> <img src="../../../assets/imageIcon.svg"></button>
+        </div>
+    </div>
+    <div class="icons-close" *ngIf="isShow">
+        <div>
+            <app-icons></app-icons>
+        </div>
+        <button class="closeButton" mat-raised-button (click)="Close()">Close</button>
+    </div>
+</div>

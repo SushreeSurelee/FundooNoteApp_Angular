@@ -1,1 +1,15 @@
-<p>display-notes works!</p>
+<!-- <p>display-notes works!</p> -->
+
+<div class="main-container">
+    <div class="notes" *ngFor='let noteArray of receiveNotes'>
+        <div class="title" >
+            <p>{{noteArray.title}}</p>
+        </div>
+        <div class="descriptiodata">
+            <p>{{noteArray.description}}</p>
+        </div>
+        <div class="note-icons">
+        <app-icons></app-icons>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+.main-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-left: 130px;
+    border: 0px solid red;
+}
+.notes {
+    width: 20vw;
+    margin: 10px;
+    border: 1px solid rgb(209, 202, 202);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: white;
+}
+.notes:hover{
+    box-shadow: 1px 1px 3px 3px rgba(157, 167, 170, 0.215);
+}
+.title{
+    padding: 10px;
+    margin-left: 18px;
+    margin-top: 10px;
+    font-size: medium;
+    font-weight: 400;
+    border: 0px solid red;
+}
+ 
+.descriptiodata{
+    padding: 10px;
+    margin-left: 18px;
+    font-size: medium;
+    border: 0px solid red;
+ }
+ .note-icons{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: baseline;
+    border: 0px solid red;
+ }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-display-notes',
@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class DisplayNotesComponent {
 
+@Input() receiveNotes : any
+title :any
+description : any
+noteArray:any
+  
 }

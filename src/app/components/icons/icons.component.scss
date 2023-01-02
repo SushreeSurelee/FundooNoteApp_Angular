@@ -1,16 +1,14 @@
 .icon-container{
-    width: 35vw;
+    width: 20vw;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     border: 0px solid blue;
-    margin-left: 10px;
 }
 .icon button{
-    margin-right: 30px;
     border: none;
     background-color: transparent;
     cursor: pointer;
     opacity:0.7;
+    margin-left: 14px;
     border: 0px solid blue;
 }

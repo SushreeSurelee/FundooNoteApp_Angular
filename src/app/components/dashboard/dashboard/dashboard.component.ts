@@ -35,4 +35,12 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
+
+  archiveNotes(){
+    this.router.navigateByUrl('/dashboard/archived-notes')
+  }
+
+  trashedNotes(){
+    this.router.navigateByUrl('/dashboard/trashed-notes')
+  }
 }

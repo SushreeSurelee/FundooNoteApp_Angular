@@ -25,6 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatMenuModule} from '@angular/material/menu';
 import { UpdateNoteComponent } from './components/update-note/update-note.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { ArchiveNoteComponent } from './components/archive-note/archive-note.component';
+import { TrashNoteComponent } from './components/trash-note/trash-note.component';
 
 
 @NgModule({
@@ -39,6 +41,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     IconsComponent,
     DashboardComponent,
     UpdateNoteComponent,
+    ArchiveNoteComponent,
+    TrashNoteComponent,
   ],
   imports: [
     BrowserModule,

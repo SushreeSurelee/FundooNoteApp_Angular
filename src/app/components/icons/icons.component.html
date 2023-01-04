@@ -4,7 +4,7 @@
         <button mat-icon-button matTooltip="Collaborator"> <img src="../../../assets/collaborator.svg"></button>
         <button mat-icon-button matTooltip="BackroundColor"> <img src="../../../assets/colorPallet.svg"></button>
         <button mat-icon-button matTooltip="Backroundimage"> <img src="../../../assets/imageIcon.svg"></button>
-        <button mat-icon-button matTooltip="Archive"> <img src="../../../assets/archive.svg"></button>
+        <button mat-icon-button matTooltip="Archive" (click)="archive()"> <img src="../../../assets/archive.svg"></button>
         <button mat-icon-button matTooltip="More" mat-button [matMenuTriggerFor]="menu"><img src="../../../assets/more.svg" alt="">
             <mat-menu #menu="matMenu">
                 <button mat-menu-item (click)="trash()">Delete Note</button>

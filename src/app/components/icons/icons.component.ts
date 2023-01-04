@@ -11,8 +11,6 @@ export class IconsComponent implements OnInit {
   constructor(private noteService: NoteService) { }
 
   @Input() noteCard: any;
-  isDeleted: boolean= false
-
   ngOnInit(): void {
     
   }
@@ -24,6 +22,16 @@ export class IconsComponent implements OnInit {
     }
     this.noteService.trashNote(payload).subscribe((response : any)=>{
       console.log(response);
+    })
+  }
+
+  archive(){
+    let payload = {
+      noteIdList: [this.noteCard.id],
+      isArchived: true
+    }
+    this.noteService.archiveNote(payload).subscribe((response:any) =>{
+      console.log(response)
     })
   }
 

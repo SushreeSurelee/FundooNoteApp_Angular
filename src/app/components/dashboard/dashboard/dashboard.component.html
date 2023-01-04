@@ -38,7 +38,7 @@
             <mat-nav-list>
                 <div class="note">
                     <img src="../../../assets/lightbulb.svg" alt="">
-                    <a mat-list-item>Notes</a>
+                    <a mat-list-item routerLink="/dashboard/notes">Notes</a>
                 </div>
                 <div class="reminders">
                     <img src="../../../../assets/reminderIcon.svg" alt="">
@@ -48,11 +48,11 @@
                     <img src="../../../../assets/editIcon.svg" alt="">
                     <a mat-list-item>Edit labels</a>
                 </div>
-                <div class="archive">
+                <div class="archive" (click)="archiveNotes()">
                     <img src="../../../assets/archive.svg" alt="">
                     <a mat-list-item>Archive</a>
                 </div>
-                <div class="trash">
+                <div class="trash" (click)="trashedNotes()">
                     <img src="../../../assets/delete.svg" alt="">
                     <a mat-list-item>Trash</a>
                 </div>

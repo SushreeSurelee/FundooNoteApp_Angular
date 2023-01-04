@@ -52,4 +52,34 @@ export class NoteService {
     }
     return this.httpService.postService("/notes/trashNotes", requestData, true, header)
   }
+
+  getAllTrashedNotes(){
+    let header = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    return this.httpService.getService("/notes/getTrashNotesList",true,header)
+  }
+
+  archiveNote(requestData:any){
+    let header = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    return this.httpService.postService("/notes/archiveNotes", requestData, true, header)
+  }
+
+  getAllArchivedNotes(){
+    let header = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    return this.httpService.getService("/notes/getArchiveNotesList",true,header)
+  }
 }

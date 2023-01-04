@@ -9,6 +9,8 @@ import { NoteService } from 'src/app/services/noteService/note.service';
 export class GetAllNotesComponent implements OnInit {
  
   NoteList=[]
+  isArchived=false
+  isDeleted=false
 
   constructor(private noteService:NoteService){}
 
@@ -20,6 +22,9 @@ export class GetAllNotesComponent implements OnInit {
     this.noteService.getAllNotes().subscribe((response:any)=>{
       this.NoteList=response.data.data
       console.log("all notes",response)
+      this.NoteList = this.NoteList.filter((result:any)=>{
+        return result.isArchived == false && result.isDeleted ==false;
+      })
     })
   }
 }

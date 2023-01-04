@@ -5,6 +5,14 @@
         <button mat-icon-button matTooltip="BackroundColor"> <img src="../../../assets/colorPallet.svg"></button>
         <button mat-icon-button matTooltip="Backroundimage"> <img src="../../../assets/imageIcon.svg"></button>
         <button mat-icon-button matTooltip="Archive"> <img src="../../../assets/archive.svg"></button>
-        <button mat-icon-button matTooltip="More"><img src="../../../assets/more.svg" alt=""></button>
+        <button mat-icon-button matTooltip="More" mat-button [matMenuTriggerFor]="menu"><img src="../../../assets/more.svg" alt="">
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="trash()">Delete Note</button>
+                <button mat-menu-item>Add Lable</button>
+                <button mat-menu-item>Add Drawing</button>
+                <button mat-menu-item>Make a copy</button>
+                <button mat-menu-item>Show checkboxes</button>
+              </mat-menu>
+        </button>
     </div>
 </div>

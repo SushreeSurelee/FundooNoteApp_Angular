@@ -22,6 +22,9 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list'; 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import {MatMenuModule} from '@angular/material/menu';
+import { UpdateNoteComponent } from './components/update-note/update-note.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 @NgModule({
@@ -35,6 +38,7 @@ import { HttpClientModule } from '@angular/common/http';
     DisplayNotesComponent,
     IconsComponent,
     DashboardComponent,
+    UpdateNoteComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +53,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     MatSidenavModule,
     MatListModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatMenuModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

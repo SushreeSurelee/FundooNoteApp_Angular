@@ -32,4 +32,24 @@ export class NoteService {
     }
     return this.httpService.getService('/notes/getNotesList',true,header)
   }
+
+  updateNote(requestData:any){
+    let header = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    return this.httpService.postService("/notes/updateNotes", requestData, true, header)
+  }
+
+  trashNote(requestData:any){
+    let header = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    return this.httpService.postService("/notes/trashNotes", requestData, true, header)
+  }
 }

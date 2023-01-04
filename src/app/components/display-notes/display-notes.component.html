@@ -1,15 +1,13 @@
-<!-- <p>display-notes works!</p> -->
-
 <div class="main-container">
     <div class="notes" *ngFor='let noteArray of receiveNotes'>
         <div class="title" >
-            <p>{{noteArray.title}}</p>
+            <p (click)="openDialog(noteArray)">{{noteArray.title}}</p>
         </div>
         <div class="descriptiodata">
-            <p>{{noteArray.description}}</p>
+            <p (click)="openDialog(noteArray)" >{{noteArray.description}}</p>
         </div>
         <div class="note-icons">
-        <app-icons></app-icons>
+        <app-icons [noteCard]="noteArray"></app-icons>
         </div>
     </div>
 </div>

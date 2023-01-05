@@ -43,4 +43,11 @@ export class DashboardComponent implements OnInit {
   trashedNotes(){
     this.router.navigateByUrl('/dashboard/trashed-notes')
   }
+
+  Logout()
+  {
+    localStorage.removeItem('token');
+    this.router.navigateByUrl("/login")
+    console.log("Logout Successfully..!!!");
+  }
 }

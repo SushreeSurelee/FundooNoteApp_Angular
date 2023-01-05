@@ -28,6 +28,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { ArchiveNoteComponent } from './components/archive-note/archive-note.component';
 import { TrashNoteComponent } from './components/trash-note/trash-note.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { AuthguardServiceService } from './services/authguard-service.service';
 
 
 @NgModule({
@@ -63,7 +64,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatDialogModule,
     MatTooltipModule
   ],
-  providers: [],
+  providers: [
+    AuthguardServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

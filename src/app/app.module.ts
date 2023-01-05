@@ -27,6 +27,7 @@ import { UpdateNoteComponent } from './components/update-note/update-note.compon
 import {MatDialogModule} from '@angular/material/dialog';
 import { ArchiveNoteComponent } from './components/archive-note/archive-note.component';
 import { TrashNoteComponent } from './components/trash-note/trash-note.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import { TrashNoteComponent } from './components/trash-note/trash-note.component
     MatListModule,
     MatToolbarModule,
     MatMenuModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

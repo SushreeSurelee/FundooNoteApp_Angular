@@ -82,4 +82,14 @@ export class NoteService {
     }
     return this.httpService.getService("/notes/getArchiveNotesList",true,header)
   }
+
+  changeNoteColor(requestData:any){
+    let header = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    return this.httpService.postService("/notes/changesColorNotes", requestData, true, header)
+  }
 }

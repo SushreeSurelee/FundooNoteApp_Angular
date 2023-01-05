@@ -2,8 +2,18 @@
     <div class="icon">
         <button mat-icon-button matTooltip="Reminder"> <img src="../../../assets/reminderIcon.svg"></button>
         <button mat-icon-button matTooltip="Collaborator"> <img src="../../../assets/collaborator.svg"></button>
-        <button mat-icon-button matTooltip="BackroundColor"> <img src="../../../assets/colorPallet.svg"></button>
-        <button mat-icon-button matTooltip="Backroundimage"> <img src="../../../assets/imageIcon.svg"></button>
+
+        <button mat-icon-button matTooltip="Backround Color" [matMenuTriggerFor]="color"> <img src="../../../assets/colorPallet.svg"></button>
+        <mat-menu #color="matMenu">
+            <div class="rangila">
+                <div *ngFor="let color of colorArray">
+                    <button mat-mini-fab [style.background-color]="color?.Colorcode"
+                        (click)="setColor(color?.Colorcode)"></button>
+                </div>
+            </div>
+        </mat-menu>
+
+        <button mat-icon-button matTooltip="Backround Image"> <img src="../../../assets/imageIcon.svg"></button>
         <button mat-icon-button matTooltip="Archive" (click)="archive()"> <img src="../../../assets/archive.svg"></button>
         <button mat-icon-button matTooltip="More" mat-button [matMenuTriggerFor]="menu"><img src="../../../assets/more.svg" alt="">
             <mat-menu #menu="matMenu">

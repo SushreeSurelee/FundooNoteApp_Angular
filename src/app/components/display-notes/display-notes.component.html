@@ -1,5 +1,5 @@
 <div class="main-container">
-    <div class="notes" *ngFor='let noteArray of receiveNotes'>
+    <div class="notes" *ngFor='let noteArray of receiveNotes' [style.background]="noteArray.color">
         <div class="title" >
             <p (click)="openDialog(noteArray)">{{noteArray.title}}</p>
         </div>

@@ -28,4 +28,7 @@ export class GetAllNotesComponent implements OnInit {
       this.NoteList = this.NoteList.reverse();
     })
   }
+  ReceiveEvent($event : any){
+    this.getAllNotes();
+  }
 }

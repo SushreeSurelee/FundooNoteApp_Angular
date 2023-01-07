@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NoteService } from 'src/app/services/noteService/note.service';
 
 @Component({
@@ -9,6 +9,7 @@ import { NoteService } from 'src/app/services/noteService/note.service';
 export class IconsComponent implements OnInit {
 
   @Input() noteCard: any;
+  @Output() NoteIconEvent = new EventEmitter<any>();
   isArchive:boolean=false;
   isDelete:boolean=false;
   isArchived:any;
@@ -41,7 +42,7 @@ export class IconsComponent implements OnInit {
       isDeleted: true
     }
     this.noteService.trashNote(payload).subscribe((response : any)=>{
-      console.log(response);
+      this.NoteIconEvent.emit(response)
     })
   }
   unTrash(){
@@ -50,7 +51,7 @@ export class IconsComponent implements OnInit {
       isDeleted:false,
     }
     this.noteService.trashNote(payload).subscribe((response :any) =>{
-      console.log(response)
+      this.NoteIconEvent.emit(response)
     })
     
   }
@@ -59,7 +60,7 @@ export class IconsComponent implements OnInit {
       noteIdList:[this.noteCard.id],
     }
     this.noteService.deleteForever(payload).subscribe((response : any)=>{
-      console.log(response)
+      this.NoteIconEvent.emit(response)
     })
   }
 
@@ -69,7 +70,7 @@ export class IconsComponent implements OnInit {
       isArchived: true
     }
     this.noteService.archiveNote(payload).subscribe((response:any) =>{
-      console.log(response)
+      this.NoteIconEvent.emit(response)
     })
   }
 
@@ -79,7 +80,7 @@ export class IconsComponent implements OnInit {
       isArchived: false,
     }
     this.noteService.archiveNote(payload).subscribe((response:any) =>{
-      console.log(response)
+      this.NoteIconEvent.emit(response)
     })
   }
 
@@ -90,7 +91,7 @@ export class IconsComponent implements OnInit {
       noteIdList:[this.noteCard.id],
     }
     this.noteService.changeNoteColor(payload).subscribe((response : any)=>{
-      console.log(response)
+      this.NoteIconEvent.emit(response)
     })
   }
 

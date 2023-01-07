@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdateNoteComponent } from '../update-note/update-note.component';
 
@@ -10,8 +10,10 @@ import { UpdateNoteComponent } from '../update-note/update-note.component';
 export class DisplayNotesComponent implements OnInit {
 
   @Input() receiveNotes: any
+  @Output() noteDisplayEvent = new EventEmitter<string>();
   title: any
   description: any
+  message:any;
 
   constructor(private dialog: MatDialog) { }
 
@@ -31,5 +33,10 @@ export class DisplayNotesComponent implements OnInit {
       this.description;
       console.log('The dialog was closed', result);
     })
+  }
+
+  recievedEventFromIcon($event:any){
+    this.message=$event;
+    this.noteDisplayEvent.emit(this.message)
   }
 }

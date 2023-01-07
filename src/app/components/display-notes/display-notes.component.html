@@ -7,7 +7,7 @@
             <p (click)="openDialog(noteArray)" >{{noteArray.description}}</p>
         </div>
         <div class="note-icons">
-        <app-icons [noteCard]="noteArray"></app-icons>
+        <app-icons [noteCard]="noteArray" (NoteIconEvent)="recievedEventFromIcon($event)"></app-icons>
         </div>
     </div>
 </div>

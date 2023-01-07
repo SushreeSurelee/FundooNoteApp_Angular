@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { NoteService } from 'src/app/services/noteService/note.service';
 
@@ -12,7 +12,10 @@ export class UpdateNoteComponent implements OnInit {
 
   title: any;
   description: any;
-  id:any
+  id:any;
+  color:any;
+
+  @Output() UpdateNoteEvent = new EventEmitter<string>();
 
   constructor(private note: NoteService, public dialogRef: MatDialogRef<UpdateNoteComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
@@ -34,8 +37,14 @@ export class UpdateNoteComponent implements OnInit {
       noteId:this.id
     }
     this.note.updateNote(payload).subscribe((response:any)=>{
+      this.UpdateNoteEvent.emit(response)
       this.dialogRef.close(response);
     })
   }
+  getcolornote($event : any){
+    this.color = $event;
+    this.UpdateNoteEvent.emit(this.color)
+  }
+
 
 }

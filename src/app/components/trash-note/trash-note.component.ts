@@ -22,5 +22,8 @@ export class TrashNoteComponent implements OnInit{
       this.TrashNotesList = response.data.data
     })
   }
+  updateNoteListEvent($event : any){
+    this.gettrashedNotes();
+  }
 
 }

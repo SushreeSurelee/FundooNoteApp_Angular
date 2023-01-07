@@ -1,13 +1,13 @@
-<div class="title-pinIcon">
-    <input class="title" placeholder="Title" [(ngModel)]="title">
+<div class="title-pinIcon" [style.background]="data.color">
+    <input class="title" placeholder="Title" [(ngModel)]="title" [style.background]="data.color">
     <img class="pin" src="../../../assets/pinNoteIcon.svg">
 </div>
-<div class="take-note">
-    <input class="note-field" type="text" placeholder="Note" [(ngModel)]="description">
+<div>
+    <input class="note-field" type="text" placeholder="Note" [(ngModel)]="description" [style.background]="data.color">
 </div>
 <div class="icons-close">
     <div>
-        <app-icons></app-icons>
+        <app-icons [noteCard]="data" (NoteIconEvent)="getcolornote($event)" [style.background]="data.color"></app-icons>
     </div>
     <button class="closeButton" (click)="closePopUp()" mat-raised-button>Close</button>
 </div>

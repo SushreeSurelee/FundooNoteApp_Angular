@@ -27,7 +27,12 @@
             <div>
                 <img class="img" src="../../../assets/menu.png">
 
-                <img (click)="Logout()" class="img1" src="../../../../assets/person.svg">
+                <button class="logout" mat-icon-button mat-button [matMenuTriggerFor]="logout">
+                    <img  class="img1" src="../../../../assets/person.svg">
+                </button>
+                <mat-menu #logout="matMenu">
+                    <button mat-menu-item (click)="Logout()">Logout</button>
+                  </mat-menu>
             </div>
         </div>
     </mat-toolbar>

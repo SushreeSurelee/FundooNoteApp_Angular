@@ -25,6 +25,7 @@ export class GetAllNotesComponent implements OnInit {
       this.NoteList = this.NoteList.filter((result:any)=>{
         return result.isArchived == false && result.isDeleted ==false;
       })
+      this.NoteList = this.NoteList.reverse();
     })
   }
 }

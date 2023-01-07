@@ -48,6 +48,5 @@ export class DashboardComponent implements OnInit {
   {
     localStorage.removeItem('token');
     this.router.navigateByUrl("/login")
-    console.log("Logout Successfully..!!!");
   }
 }

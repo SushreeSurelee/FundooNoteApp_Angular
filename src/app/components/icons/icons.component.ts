@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { NoteService } from 'src/app/services/noteService/note.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class IconsComponent implements OnInit {
   isArchived:any;
   isDeleted:any;
 
-  constructor(private noteService: NoteService) { }
+  constructor(private noteService: NoteService,private snackbar:MatSnackBar) { }
 
   colorArray = [
     { Colorcode: "#2ECC71" },
@@ -43,6 +44,12 @@ export class IconsComponent implements OnInit {
     }
     this.noteService.trashNote(payload).subscribe((response : any)=>{
       this.NoteIconEvent.emit(response)
+
+      this.snackbar.open('Note Trashed successfully', '', {
+        duration: 3000,
+        verticalPosition: 'bottom',
+        horizontalPosition:'right'
+      })
     })
   }
   unTrash(){
@@ -52,6 +59,11 @@ export class IconsComponent implements OnInit {
     }
     this.noteService.trashNote(payload).subscribe((response :any) =>{
       this.NoteIconEvent.emit(response)
+      this.snackbar.open('Note Restored successfully', '', {
+        duration: 3000,
+        verticalPosition: 'bottom',
+        horizontalPosition:'right'
+      })
     })
     
   }
@@ -61,6 +73,11 @@ export class IconsComponent implements OnInit {
     }
     this.noteService.deleteForever(payload).subscribe((response : any)=>{
       this.NoteIconEvent.emit(response)
+      this.snackbar.open('Note Deleted Permanently', '', {
+        duration: 3000,
+        verticalPosition: 'bottom',
+        horizontalPosition:'right'
+      })
     })
   }
 
@@ -71,6 +88,12 @@ export class IconsComponent implements OnInit {
     }
     this.noteService.archiveNote(payload).subscribe((response:any) =>{
       this.NoteIconEvent.emit(response)
+
+      this.snackbar.open('Note Archived successfully', '', {
+        duration: 3000,
+        verticalPosition: 'bottom',
+        horizontalPosition:'right'
+      })
     })
   }
 
@@ -81,6 +104,12 @@ export class IconsComponent implements OnInit {
     }
     this.noteService.archiveNote(payload).subscribe((response:any) =>{
       this.NoteIconEvent.emit(response)
+
+      this.snackbar.open('Note Unarchived successfully', '', {
+        duration: 3000,
+        verticalPosition: 'bottom',
+        horizontalPosition:'right'
+      })
     })
   }
 
@@ -92,6 +121,12 @@ export class IconsComponent implements OnInit {
     }
     this.noteService.changeNoteColor(payload).subscribe((response : any)=>{
       this.NoteIconEvent.emit(response)
+
+      this.snackbar.open('Note Color Changed successfully', '', {
+        duration: 3000,
+        verticalPosition: 'bottom',
+        horizontalPosition:'right'
+      })
     })
   }
 

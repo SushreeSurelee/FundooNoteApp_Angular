@@ -29,6 +29,7 @@ import { ArchiveNoteComponent } from './components/archive-note/archive-note.com
 import { TrashNoteComponent } from './components/trash-note/trash-note.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { AuthguardServiceService } from './services/authguard-service.service';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import { AuthguardServiceService } from './services/authguard-service.service';
     MatToolbarModule,
     MatMenuModule,
     MatDialogModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatSnackBarModule
   ],
   providers: [
     AuthguardServiceService

@@ -1,5 +1,5 @@
 <div class="main-container">
-    <div class="notes" *ngFor='let noteArray of receiveNotes' [style.background]="noteArray.color">
+    <div class="notes" *ngFor='let noteArray of receiveNotes' [style.background]="noteArray.color" (UpdateNoteEvent)="recievedEvent($event)" [class.listview]="gridlistView"  >
         <div class="title" >
             <p (click)="openDialog(noteArray)">{{noteArray.title}}</p>
         </div>
@@ -7,7 +7,7 @@
             <p (click)="openDialog(noteArray)" >{{noteArray.description}}</p>
         </div>
         <div class="note-icons">
-        <app-icons [noteCard]="noteArray" (NoteIconEvent)="recievedEventFromIcon($event)"></app-icons>
+        <app-icons [noteCard]="noteArray" (NoteIconEvent)="recievedEvent($event)"></app-icons>
         </div>
     </div>
 </div>

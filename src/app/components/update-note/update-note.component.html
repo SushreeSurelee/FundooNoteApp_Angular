@@ -5,9 +5,9 @@
 <div>
     <input class="note-field" type="text" placeholder="Note" [(ngModel)]="description" [style.background]="data.color">
 </div>
-<div class="icons-close">
-    <div>
-        <app-icons [noteCard]="data" (NoteIconEvent)="getcolornote($event)" [style.background]="data.color"></app-icons>
+<div class="icons-close" [style.background]="data.color">
+    <div [style.background]="data.color">
+        <app-icons [noteCard]="data" (NoteIconEvent)="getcolornote($event)"></app-icons>
     </div>
     <button class="closeButton" (click)="closePopUp()" mat-raised-button>Close</button>
 </div>

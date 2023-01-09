@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { DataServiceService } from 'src/app/services/dataService/data-service.service';
 import { UpdateNoteComponent } from '../update-note/update-note.component';
 
 @Component({
@@ -14,11 +15,15 @@ export class DisplayNotesComponent implements OnInit {
   title: any
   description: any
   message:any;
+  gridlistView: any;
 
-  constructor(private dialog: MatDialog) { }
+  constructor(private dialog: MatDialog, private dataService : DataServiceService) { }
 
   ngOnInit(): void {
-
+    this.dataService.store.subscribe(any=>this.gridlistView=any)
+    this.dataService.currentMessage.subscribe((response:any)=>{
+      console.log(response)
+    })
   }
 
   openDialog(noteArray: any) {
@@ -35,7 +40,7 @@ export class DisplayNotesComponent implements OnInit {
     })
   }
 
-  recievedEventFromIcon($event:any){
+  recievedEvent($event:any){
     this.message=$event;
     this.noteDisplayEvent.emit(this.message)
   }

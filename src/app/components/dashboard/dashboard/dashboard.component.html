@@ -19,7 +19,14 @@
         <div class="btn-container">
             <div>
                 <img class="img" src="../../../assets/Refresh.png">
-                <img class="img" src="../../../assets/view.png">
+                
+                    <button *ngIf="!grid" class="listview" >
+                        <img (click)="formatListView();FormatView()" class="img" src="../../../assets/view.png">
+                    </button>
+
+                    <button *ngIf="grid" class="gridview" >
+                        <img (click)="formatGridView();FormatView()" class="img" src="../../../assets/view.png">
+                    </button>
                 <img class="img" src="../../../assets/settingicon.png">
             </div>
         </div>

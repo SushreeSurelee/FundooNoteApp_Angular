@@ -1,5 +1,5 @@
 <div class="main-container">
-    <div class="notes" *ngFor='let noteArray of receiveNotes' [style.background]="noteArray.color" (UpdateNoteEvent)="recievedEvent($event)" [class.listview]="gridlistView"  >
+    <div class="notes" *ngFor='let noteArray of receiveNotes | filter : searchbar' [style.background]="noteArray.color" (UpdateNoteEvent)="recievedEvent($event)" [class.listview]="gridlistView"  >
         <div class="title" >
             <p (click)="openDialog(noteArray)">{{noteArray.title}}</p>
         </div>

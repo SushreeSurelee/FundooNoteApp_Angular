@@ -7,15 +7,17 @@
             <img src="../../../../assets/keep_logo.png">
         </div>
         <h1 class="example-app-name">Fundoo</h1>
+
         <div class="search-container">
             <div class="search-btn" type="button">
                 <img src="../../../../assets/search.svg">
             </div>
             <div>
                 <input class="search-field" type="text" aria-label="search" placeholder="Search" autocomplete="off"
-                    role="combobox" aria-hidden="false">
+                    role="combobox" aria-hidden="false" (keyup)="searchNote($event)">
             </div>
         </div>
+
         <div class="btn-container">
             <div>
                 <img class="img" src="../../../assets/Refresh.png">

@@ -30,6 +30,7 @@ import { TrashNoteComponent } from './components/trash-note/trash-note.component
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { AuthguardServiceService } from './services/authguard-service.service';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { FilterPipe } from './pipe/filter.pipe';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     UpdateNoteComponent,
     ArchiveNoteComponent,
     TrashNoteComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,

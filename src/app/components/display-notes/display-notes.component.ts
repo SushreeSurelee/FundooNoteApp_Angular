@@ -16,6 +16,7 @@ export class DisplayNotesComponent implements OnInit {
   description: any
   message:any;
   gridlistView: any;
+  searchbar='';
 
   constructor(private dialog: MatDialog, private dataService : DataServiceService) { }
 
@@ -23,6 +24,7 @@ export class DisplayNotesComponent implements OnInit {
     this.dataService.store.subscribe(any=>this.gridlistView=any)
     this.dataService.currentMessage.subscribe((response:any)=>{
       console.log(response)
+      this.searchbar=response;
     })
   }
 

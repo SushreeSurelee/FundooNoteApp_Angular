@@ -53,6 +53,10 @@ export class DashboardComponent implements OnInit {
     this.router.navigateByUrl("/login")
   }
 
+  searchNote(event:any){
+    this.dataService.sendMessage(event.target.value)
+  }
+
   FormatView() {
     if (this.formatGridList == false) {
       this.formatGridList = true

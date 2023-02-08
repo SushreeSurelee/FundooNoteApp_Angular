@@ -14,7 +14,6 @@
 
     display: flex;
     flex-direction: row;
-    border: 0px solid red;
 }
 
 .column-main {
@@ -23,12 +22,10 @@
     width: 27vw;
     margin-left: 30px;
     margin-top: 41px;
-    border: 0px solid red;
 }
 
 .head h1 {
     font-family: "Google Sans", "Noto Sans Myanmar UI", arial, sans-serif;
-    border: 0px solid red;
 }
 
 .name {
@@ -36,17 +33,14 @@
     flex-direction: row;
     justify-content: space-between;
     margin-top: 24px;
-    border: 0px solid red;
 }
 
 .name .first-name {
-    border: 0px solid blue;
     width: 13vw;
 }
 
 .name .last-name {
-    border: 0px solid blue;
-    width: 13vw;
+        width: 13vw;
 }
 
 .email-class {
@@ -63,7 +57,6 @@
 .hint1 {
     color: gray;
     font-size: 14px;
-    border: 0px solid blue;
 }
 
 .hint2 {
@@ -71,7 +64,6 @@
     flex-wrap: wrap;
     color: gray;
     font-size: 15px;
-    border: 0px solid blue;
     margin-left: 16px;
     margin-top: -26px !important;
     font-size: 14px;
@@ -118,7 +110,6 @@
     height: 400px;
     margin-top: 150px;
     margin-left: 100px;
-    border: 0px solid blue;
 }
 
 .side-container img {

@@ -35,15 +35,16 @@ export class LoginComponent implements OnInit{
           password : this.loginForm.value.password
         }
         this.userService.login(payload).subscribe((response : any)=> {
-          console.log("login sucessfull",response);
           localStorage.setItem('token',response.id);
           this.router.navigateByUrl('/dashboard/notes')
 
           this.snackbar.open('You have logged in successfully', '', {
             duration: 3000,
             verticalPosition: 'bottom',
-            horizontalPosition:'right'
+            horizontalPosition:'center'
           })
+        },(error : any)=>{
+          console.log(error)
         })
     }
 }

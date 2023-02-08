@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { DataServiceService } from 'src/app/services/dataService/data-service.service';
 import { UpdateNoteComponent } from '../update-note/update-note.component';
 
@@ -18,7 +19,7 @@ export class DisplayNotesComponent implements OnInit {
   gridlistView: any;
   searchbar='';
 
-  constructor(private dialog: MatDialog, private dataService : DataServiceService) { }
+  constructor(private dialog: MatDialog, private dataService : DataServiceService, private snackbar : MatSnackBar) { }
 
   ngOnInit(): void {
     this.dataService.store.subscribe(any=>this.gridlistView=any)
@@ -38,7 +39,14 @@ export class DisplayNotesComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       this.title;
       this.description;
+      this.noteDisplayEvent.emit(result)
       console.log('The dialog was closed', result);
+
+      this.snackbar.open('Note updated successfully', '', {
+        duration: 3000,
+        verticalPosition: 'bottom',
+        horizontalPosition:'right'
+      })
     })
   }
 

@@ -21,7 +21,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list'; 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import {MatMenuModule} from '@angular/material/menu';
 import { UpdateNoteComponent } from './components/update-note/update-note.component';
 import {MatDialogModule} from '@angular/material/dialog';
@@ -31,6 +31,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { AuthguardServiceService } from './services/authguard-service.service';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { FilterPipe } from './pipe/filter.pipe';
+import { ErrorInterceptService } from './services/errorIntercept/error-intercept.service';
 
 
 @NgModule({
@@ -69,7 +70,12 @@ import { FilterPipe } from './pipe/filter.pipe';
     MatSnackBarModule
   ],
   providers: [
-    AuthguardServiceService
+    AuthguardServiceService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptService,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

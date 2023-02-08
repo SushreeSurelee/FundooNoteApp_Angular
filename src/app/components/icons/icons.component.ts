@@ -11,6 +11,7 @@ export class IconsComponent implements OnInit {
 
   @Input() noteCard: any;
   @Output() NoteIconEvent = new EventEmitter<any>();
+  
   isArchive:boolean=false;
   isDelete:boolean=false;
   isArchived:any;

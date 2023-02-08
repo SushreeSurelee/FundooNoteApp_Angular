@@ -7,6 +7,7 @@
 }
 .notes {
     width: 20vw;
+    height: 20vh;
     margin: 10px;
     border: 1px solid rgb(209, 202, 202);
     border-radius: 5px;
@@ -27,19 +28,36 @@
     border: 0px solid red;
 }
  
-.descriptiodata{
+.descriptiondata{
     padding: 10px;
     margin-left: 18px;
     font-size: medium;
     border: 0px solid red;
  }
- .note-icons{
+ 
+//  .note-icons{
+//     display: flex;
+//     flex-direction: row;
+//     width: 100%;
+//     align-items: baseline;
+//     border: 0px solid red;
+//  }
+
+.note-icons{
+    display: none;
+}
+.note-icons:hover{
     display: flex;
-    flex-direction: row;
-    width: 100%;
-    align-items: baseline;
-    border: 0px solid red;
- }
+}
+.notes:hover .note-icons {
+    display: flex;
+}
+
+.select{
+    background-position: center;
+    background-repeat: no-repeat;
+    display: none;
+}
 
  .listview{
     width: 43.4vw;

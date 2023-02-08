@@ -49,6 +49,8 @@ export class RegisterComponent implements OnInit {
           verticalPosition: 'bottom',
           horizontalPosition:'right'
         })
+      },(error : any)=>{
+        console.log(error)
       })
     }
 

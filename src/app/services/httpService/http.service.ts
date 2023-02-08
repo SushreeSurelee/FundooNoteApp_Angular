@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class HttpService {
 
   baseurl = 'http://fundoonotes.incubation.bridgelabz.com/api'
+  //baseurl = 'https://localhost:44396/api'
 
   constructor(private httpClient: HttpClient) { }
 

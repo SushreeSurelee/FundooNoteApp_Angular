@@ -1,5 +1,6 @@
 import { HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { IForgetPassword, IUserLogin, IUserRegister } from 'src/app/models/UserModel';
 import { HttpService } from '../httpService/http.service';
 
 @Injectable({
@@ -9,7 +10,7 @@ export class UserService {
 
   constructor(private httpService: HttpService) { }
 
-  login(requestData: any) {
+  login(requestData: IUserLogin) {
     let header = {
       headers: new HttpHeaders({
         'Content-type': 'application/json',
@@ -18,7 +19,7 @@ export class UserService {
     return this.httpService.postService('/user/login', requestData, false, header)
   }
 
-  registration(requestData: any){
+  registration(requestData: IUserRegister){
     let header = {
       headers: new HttpHeaders({
         'Content-type': 'application/json',
@@ -27,7 +28,7 @@ export class UserService {
     return this.httpService.postService('/user/userSignUp',requestData,false,header)
   }
 
-  forgetPassword(requestData: any){
+  forgetPassword(requestData: IForgetPassword){
     let header = {
       headers: new HttpHeaders({
         'Content-type': 'application/json',

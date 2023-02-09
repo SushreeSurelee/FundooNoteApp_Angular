@@ -1,5 +1,6 @@
 import { HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { IAddNote } from 'src/app/models/UserModel';
 import { HttpService } from '../httpService/http.service';
 
 @Injectable({
@@ -13,7 +14,7 @@ export class NoteService {
     this.token = localStorage.getItem('token')
    }
 
-  addNote(requestData:any){
+  addNote(requestData:IAddNote){
     let header = {
       headers: new HttpHeaders({
         'Content-type': 'application/json',

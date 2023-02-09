@@ -32,9 +32,6 @@ export class ForgetPasswordComponent implements OnInit{
         console.log('reset email sent to',response);
        })
     }
-
-    // display form values on success
-    // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.forgotpasswordForm.value, null, 4));
 }
 
 onReset() {
